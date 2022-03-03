@@ -22,6 +22,8 @@ function createDeck() {
 	return deck;
 };
 
+const initialDeck = createDeck();
+
 function suitFilter(suit) {
   cardsDiv.innerHTML = ("")
   
@@ -58,5 +60,12 @@ pausButton.addEventListener('click', () => {
   const pausCards = suitFilter('paus')
 
   const text = document.createTextNode(JSON.stringify(pausCards))
+  cardsDiv.appendChild(text)
+});
+
+initialStateButton.addEventListener('click', () => {
+  cardsDiv.innerHTML = (" ")
+
+  const text = document.createTextNode(JSON.stringify(initialDeck))
   cardsDiv.appendChild(text)
 });
