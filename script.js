@@ -5,6 +5,7 @@ const heartsButton = document.querySelector('#hearts-button');
 const spadesButton = document.querySelector('#spades-button');
 const diamondsButton = document.querySelector('#diamonds-button');
 const clubsButton = document.querySelector('#clubs-button');
+
 const shuffle = document.querySelector('#shuffle');
 const initialStateButton = document.querySelector('#initial-state-button');
 
@@ -35,7 +36,6 @@ function suitFilter(suit) {
 
 function shuffleFunction(array) {
   let currentIndex = array.length,  randomIndex;
-
   while (currentIndex != 0) {
 
     randomIndex = Math.floor(Math.random() * currentIndex);
