@@ -5,6 +5,7 @@ const copasButton = document.querySelector('#copas-button');
 const espadasButton = document.querySelector('#espadas-button');
 const ourosButton = document.querySelector('#ouros-button');
 const pausButton = document.querySelector('#paus-button');
+const shuffle = document.querySelector('#shuffle');
 const initialStateButton = document.querySelector('#initial-state-button');
 
 const cardsDiv = document.querySelector('#cards-div');
@@ -69,3 +70,31 @@ initialStateButton.addEventListener('click', () => {
   const text = document.createTextNode(JSON.stringify(initialDeck))
   cardsDiv.appendChild(text)
 });
+
+shuffle.addEventListener('click', ()=>{
+  cardsDiv.innerHTML = (" ")
+
+  function shuffle(array) {
+    let currentIndex = array.length,  randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (currentIndex != 0) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  
+    console.log(array)
+    return array;
+  }
+  const shuffledDeck = shuffle(createDeck())
+  const text = document.createTextNode(JSON.stringify(shuffledDeck))
+  cardsDiv.appendChild(text)
+})
+
+
